@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.chenxins.invest.model.entity.mapper.InvestTradeMapper" >
+  <resultMap id="BaseResultMap" type="cn.chenxins.invest.model.entity.InvestTrade" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="operate" property="operate" jdbcType="INTEGER" />
+    <result column="apply_day" property="applyDay" jdbcType="VARCHAR" />
+    <result column="confirm_day" property="confirmDay" jdbcType="VARCHAR" />
+    <result column="mount" property="mount" jdbcType="REAL" />
+    <result column="way" property="way" jdbcType="VARCHAR" />
+    <result column="product_code" property="productCode" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="REAL" />
+    <result column="unit_price" property="unitPrice" jdbcType="REAL" />
+    <result column="fee" property="fee" jdbcType="REAL" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

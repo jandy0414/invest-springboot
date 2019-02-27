@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.chenxins.invest.model.entity.mapper.InvestAssetsMapper" >
+  <resultMap id="BaseResultMap" type="cn.chenxins.invest.model.entity.InvestAssets" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="product_code" property="productCode" jdbcType="VARCHAR" />
+    <result column="report_day" property="reportDay" jdbcType="VARCHAR" />
+    <result column="start_value" property="startValue" jdbcType="REAL" />
+    <result column="count" property="count" jdbcType="REAL" />
+    <result column="unit_price" property="unitPrice" jdbcType="REAL" />
+    <result column="end_value" property="endValue" jdbcType="REAL" />
+    <result column="eventuate" property="eventuate" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>
