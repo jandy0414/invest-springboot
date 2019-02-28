@@ -37,6 +37,12 @@ public class AssetsController {
     @Autowired
     private ValuationService valuationService;
 
+    @GetMapping("home")
+    @Authorization
+    public Object getHomeData(){
+        return baseService.getForHomeData();
+    }
+
     @GetMapping("list")
     @Authorization
     public ResultJson getPageList(@RequestParam(required = false) Integer page, @RequestParam(required = false) Integer perPage,
