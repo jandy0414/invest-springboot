@@ -20,9 +20,26 @@ import java.util.List;
 @Service
 public class ValuationService {
 
+
     @Autowired
     private InvestValuationMapper baseMapper;
 
+//    @Transactional(propagation = Propagation.SUPPORTS)
+//    public List<InvestValuation> getHomeLineChartData(List listP) {
+//        Example example = new Example(InvestValuation.class);
+////        Example.Criteria criteria = example.createCriteria();
+//
+////        criteria.andEqualTo("valDay", valDay);
+//        if (listP !=null && !listP.isEmpty())
+//        {
+//            example.and().orIn("inCode",  listP)
+//                    .orIn("outCode",listP);
+//        }
+//        example.orderBy("valDay").asc();
+//
+//        List<InvestValuation> alist=baseMapper.selectByExample(example);
+//        return alist;
+//    }
     @Transactional(propagation = Propagation.SUPPORTS)
     public List<InvestValuation> getListByPlistAndValDay(List listP,String valDay) {
         Example example = new Example(InvestValuation.class);

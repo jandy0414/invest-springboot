@@ -63,6 +63,8 @@ public class TradeService {
                    } else if (tmp2.getOperate()== 2 || tmp2.getOperate()== 5) {   //  卖出  赎回
                        tmp.setCount(tmp.getCount()-tmp2.getCount());
                        tmp.setStartValue(tmp.getStartValue()-tmp2.getMount());
+                   } else if (tmp2.getOperate() == 6) { // 分红  --期初投入回血一部分
+                       tmp.setStartValue(tmp.getStartValue()-tmp2.getMount());
                    } else {
                        System.out.println("出现未知操作代码:"+tmp2.getOperate());
                    }

@@ -37,11 +37,6 @@ public class AssetsController {
     @Autowired
     private ValuationService valuationService;
 
-    @GetMapping("home")
-    @Authorization
-    public Object getHomeData(){
-        return baseService.getForHomeData();
-    }
 
     @GetMapping("list")
     @Authorization
@@ -124,8 +119,9 @@ public class AssetsController {
             listPCode.add(json.getProductCode());
 
             List<InvestValuation> listV=valuationService.getListByPlistAndValDay(listPCode,json.getReportDay());
-            if (listV ==null || listV.size()==0){
-                return ResultJson.BussinessException("根据评估日："+json.getReportDay()+",找不到估值信息");
+            if (listV ==null ){
+//                return ResultJson.BussinessException("根据评估日："+json.getReportDay()+",找不到估值信息");
+                listV=new ArrayList<>();
             }
 
             List<InvestTrade> listT=tradeService.getListByProducts(listPCode);

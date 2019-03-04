@@ -22,6 +22,10 @@ public class ProductService {
     @Autowired
     private InvestProductMapper baseMapper;
 
+    public List<String> getHomeLineChartPCode() {
+        return baseMapper.getCodeForLineChart();
+    }
+
     @Transactional(propagation = Propagation.SUPPORTS)
     public List<InvestProduct> getInvestProductList() {
         Example example = new Example(InvestProduct.class);

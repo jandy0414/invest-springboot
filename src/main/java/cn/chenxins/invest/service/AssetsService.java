@@ -4,7 +4,7 @@ package cn.chenxins.invest.service;
 import cn.chenxins.exception.BussinessErrorException;
 import cn.chenxins.invest.model.entity.InvestAssets;
 import cn.chenxins.invest.model.entity.mapper.InvestAssetsMapper;
-import cn.chenxins.invest.model.json.AssetsHomeJson;
+import cn.chenxins.invest.model.json.HomePanelJson;
 import cn.chenxins.invest.model.json.AssetsPageJson;
 import cn.chenxins.utils.JdateUtils;
 import cn.chenxins.utils.StringUtil;
@@ -23,8 +23,26 @@ public class AssetsService {
     @Autowired
     private InvestAssetsMapper baseMapper;
 
-    public AssetsHomeJson getForHomeData(){
+    public HomePanelJson getPanelGroupData(){
         return baseMapper.getForHome();
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<InvestAssets> getHomeLineChartData(List listP) {
+        Example example = new Example(InvestAssets.class);
+        Example.Criteria criteria = example.createCriteria();
+
+//        criteria.andEqualTo("valDay", valDay);
+        if (listP !=null && !listP.isEmpty())
+        {
+            criteria.andIn("productCode",  listP);
+        }
+        criteria.andIsNotNull("reportDay");
+
+        example.orderBy("reportDay").asc();
+
+        List<InvestAssets> alist=baseMapper.selectByExample(example);
+        return alist;
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)

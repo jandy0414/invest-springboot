@@ -1,6 +1,6 @@
 package cn.chenxins.invest.model.json;
 
-public class AssetsHomeJson {
+public class HomePanelJson {
 
     private Float endValue;
 

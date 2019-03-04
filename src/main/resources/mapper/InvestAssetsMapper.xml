@@ -5,7 +5,7 @@
     SELECT sum(a.end_value) as end_value,sum(a.end_value-a.start_value) as profit FROM `invest_assets` a
     where a.report_day=(SELECT max(report_day) FROM `invest_assets`) ;
   </select>
-  <resultMap id="AssetsHomeMap" type="cn.chenxins.invest.model.json.AssetsHomeJson" >
+  <resultMap id="AssetsHomeMap" type="cn.chenxins.invest.model.json.HomePanelJson" >
     <result column="end_value" property="endValue" jdbcType="INTEGER" />
     <result column="profit" property="profit" jdbcType="INTEGER" />
   </resultMap>
